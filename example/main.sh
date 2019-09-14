@@ -1,16 +1,41 @@
 #!/bin/bash
 
-most_common_value=0
-most_common_value_index=0	
+sort | uniq -c | sort -nr | head -n 1 | tr -s " " | cut -s -d " " -f 3
 
-while read value
-do
-	let freq_arr[value]++
-	if (( $most_common_value < ${freq_arr[value]} )) 
-	then
-		most_common_value=${freq_arr[value]}
-		most_common_value_index=$value
-	fi
-done
+#sort | uniq -c | sort -nr | head -n 1 | tr -s " " | sed 's/\s*[0-9]\+\s\+//'
 
-echo $most_common_value
+#sort | uniq -c | sort -nr | awk '{ print $2 ; exit }'
+
+#sort | uniq -c | sort -nr | awk 'NR == 1 { print $2 }'
+
+#sort | uniq -c | sort -nr | awk '{ print $2 ; exit }'
+
+#awk '{
+	#if (s[max] < ++s[$1])
+		#max = $1
+#}
+#END {
+	#if (s[max])
+		#print max
+#}
+#'
+
+#awk '
+#{
+	#++s[$1]
+#}
+#END {
+	#for (i in s)
+		#print s[i], i
+#}
+#' | awk '
+#max < $1 {
+	#max = $1
+	#v = $2
+#}
+#END {
+	#if (v)
+		#print v
+#}
+#'
+
