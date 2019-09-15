@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sort | uniq -c | sort -nr | head -n 1 | tr -s " " | cut -s -d " " -f 3
 
@@ -39,3 +39,4 @@ sort | uniq -c | sort -nr | head -n 1 | tr -s " " | cut -s -d " " -f 3
 #}
 #'
 
+# https://github.com/TheMozg/awk-raycaster
